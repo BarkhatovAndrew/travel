@@ -9,7 +9,7 @@ const StyledPromoItem = styled.div`
   .pic-text {
     position: absolute;
     top: 30px;
-    left: 40px;
+    left: 30px;
     background-color: #f1eff1;
     padding: ${({ theme }) => theme.paddings.p2}
       ${({ theme }) => theme.paddings.p3};
@@ -32,9 +32,6 @@ const StyledPromoItem = styled.div`
 
   .pic-block:first-child {
     width: 65%;
-  }
-
-  .pic-block:last-child {
   }
 `
 

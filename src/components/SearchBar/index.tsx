@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import styled from 'styled-components'
 import { RiHotelLine } from 'react-icons/ri'
 import { TbPlane } from 'react-icons/tb'
@@ -51,6 +51,7 @@ const StyledSearchBar = styled.div`
       left: 36px;
     }
 
+    // TODO: совместить похожие стили
     .search-city {
       background-color: #f8f8f8;
       border: none;
@@ -58,6 +59,49 @@ const StyledSearchBar = styled.div`
       width: 400px;
       height: 30px;
       padding: 4px 32px;
+      margin: 0 4px;
+    }
+
+    .check-in-datepicker {
+      background-color: #f8f8f8;
+      border: none;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      margin-left: 4px;
+      width: 100px;
+      height: 30px;
+      padding: 4px 16px;
+    }
+
+    .check-out-datepicker {
+      background-color: #f8f8f8;
+      border: none;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-left: 1px solid #e5e5e5;
+      margin-right: 4px;
+      width: 100px;
+      height: 30px;
+      padding: 4px 16px;
+    }
+
+    .guests {
+      background-color: #f8f8f8;
+      border: none;
+      height: 30px;
+      padding: 4px 16px;
+      border-radius: 10px;
+      margin: 0 4px;
+    }
+
+    .search-btn {
+      background-color: ${({ theme }) => theme.colors.secondary};
+      border: none;
+      border-radius: 10px;
+      padding: 10px 44px;
+      color: white;
+      margin-left: 4px;
+      cursor: pointer;
     }
   }
 `
@@ -88,6 +132,28 @@ const SearchBar: FC = () => {
       <div className="search-bar-panel">
         <BiSearchAlt2 />
         <input type="text" placeholder="Norway, Oslo" className="search-city" />
+        <input
+          type="text"
+          className="check-in-datepicker"
+          onFocus={(e) => (e.target.type = 'date')}
+          onBlur={(e) => (e.target.type = 'text')}
+          placeholder="Check In"
+        />
+        <input
+          type="text"
+          className="check-out-datepicker"
+          onFocus={(e) => (e.target.type = 'date')}
+          onBlur={(e) => (e.target.type = 'text')}
+          placeholder="Check Out"
+        />
+        <input
+          type="number"
+          placeholder="Guests"
+          min={1}
+          max={12}
+          className="guests"
+        />
+        <button className="search-btn">Search</button>
       </div>
     </StyledSearchBar>
   )
