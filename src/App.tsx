@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Container from './components/common/Container'
 import PromoBar from './components/PromoBar'
 import PopularBlock from './components/PopularBlock'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <PromoBar />
       <PopularBlock />
+      <Footer />
     </Container>
   )
 }

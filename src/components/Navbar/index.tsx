@@ -47,6 +47,7 @@ const StyledNavbar = styled.div`
 
       a {
         margin-left: 8px;
+        cursor: pointer;
       }
     }
   }
