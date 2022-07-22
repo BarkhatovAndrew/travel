@@ -6,7 +6,10 @@ import { StyledNavbar } from './styles'
 
 const Navbar: FC = () => {
   return (
-    <StyledNavbar>
+    <StyledNavbar
+      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: -100 }}
+    >
       <ul className="menu">
         {menu.map((item) => (
           <li key={item.title}>

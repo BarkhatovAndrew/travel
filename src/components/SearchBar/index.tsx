@@ -1,26 +1,26 @@
-import { FC } from 'react'
-import { RiHotelLine } from 'react-icons/ri'
-import { TbPlane } from 'react-icons/tb'
-import { AiOutlineCar } from 'react-icons/ai'
+import { FC, useState } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { StyledButton, StyledSearchBar } from './styles'
+import { tabs } from '../../utils/headerTabs'
 
 const SearchBar: FC = () => {
+  const [activeTab, setActiveTab] = useState<0 | 1 | 2>(0)
+  const handleActiveTab = (id: 0 | 1 | 2) => {
+    setActiveTab(id)
+  }
   return (
     <StyledSearchBar>
       <div className="buttons">
-        <StyledButton active>
-          <RiHotelLine />
-          Hotel
-        </StyledButton>
-        <StyledButton>
-          <TbPlane />
-          Flight
-        </StyledButton>
-        <StyledButton>
-          <AiOutlineCar />
-          Car Rental
-        </StyledButton>
+        {tabs.map((tab) => (
+          <StyledButton
+            key={tab.id}
+            active={tab.id === activeTab}
+            onClick={() => handleActiveTab(tab.id)}
+          >
+            {tab.icon}
+            {tab.title}
+          </StyledButton>
+        ))}
       </div>
       <div className="search-bar-panel">
         <BiSearchAlt2 />

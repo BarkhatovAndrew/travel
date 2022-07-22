@@ -102,6 +102,7 @@ export const StyledSearchBar = styled.div`
 `
 
 export const StyledButton = styled.button<IButtonProps>`
+  cursor: pointer;
   background-color: ${(props) =>
     props.active ? props.theme.colors.secondary : 'white'};
   color: ${(props) => (props.active ? 'white' : props.theme.colors.main)};
