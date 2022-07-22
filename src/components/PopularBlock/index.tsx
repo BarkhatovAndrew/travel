@@ -7,12 +7,21 @@ const StyledPopularBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 50px;
 
   h2 {
     font-size: 40px;
     color: ${({ theme }) => theme.colors.main};
     margin-left: ${({ theme }) => theme.paddings.p5};
     margin-top: ${({ theme }) => theme.paddings.p5};
+    margin-bottom: 50px;
+  }
+
+  .houses {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 32px;
   }
 `
 
@@ -21,8 +30,10 @@ const PopularBlock: FC = () => {
   return (
     <StyledPopularBlock>
       <h2>Popular places</h2>
-      {data && data.map((item) => item.title)}
-      <PopularItem />
+      <div className="houses">
+        {data &&
+          data.map((house) => <PopularItem key={house.title} house={house} />)}
+      </div>
     </StyledPopularBlock>
   )
 }
