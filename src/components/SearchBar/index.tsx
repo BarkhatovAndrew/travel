@@ -1,28 +1,18 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
-import { StyledButton, StyledSearchBar } from './styles'
-import { tabs } from '../../utils/headerTabs'
+import { StyledSearchBar } from './styles'
+import { motion } from 'framer-motion'
+import Tabs from './Tabs'
 
 const SearchBar: FC = () => {
-  const [activeTab, setActiveTab] = useState<0 | 1 | 2>(0)
-  const handleActiveTab = (id: 0 | 1 | 2) => {
-    setActiveTab(id)
-  }
   return (
     <StyledSearchBar>
-      <div className="buttons">
-        {tabs.map((tab) => (
-          <StyledButton
-            key={tab.id}
-            active={tab.id === activeTab}
-            onClick={() => handleActiveTab(tab.id)}
-          >
-            {tab.icon}
-            {tab.title}
-          </StyledButton>
-        ))}
-      </div>
-      <div className="search-bar-panel">
+      <Tabs />
+      <motion.div
+        className="search-bar-panel"
+        animate={{ scale: 1 }}
+        initial={{ scale: 0 }}
+      >
         <BiSearchAlt2 />
         <input type="text" placeholder="Norway, Oslo" className="search-city" />
         <input
@@ -47,7 +37,7 @@ const SearchBar: FC = () => {
           className="guests"
         />
         <button className="search-btn">Search</button>
-      </div>
+      </motion.div>
     </StyledSearchBar>
   )
 }

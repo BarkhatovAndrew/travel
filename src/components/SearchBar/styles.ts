@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface IButtonProps {
-  active?: boolean
-}
-
 export const StyledSearchBar = styled.div`
   display: flex;
   flex-direction: column;
@@ -99,11 +95,4 @@ export const StyledSearchBar = styled.div`
       cursor: pointer;
     }
   }
-`
-
-export const StyledButton = styled.button<IButtonProps>`
-  cursor: pointer;
-  background-color: ${(props) =>
-    props.active ? props.theme.colors.secondary : 'white'};
-  color: ${(props) => (props.active ? 'white' : props.theme.colors.main)};
 `

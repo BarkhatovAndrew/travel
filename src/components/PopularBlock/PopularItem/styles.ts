@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const StyledPopularItem = styled.div`
+export const StyledPopularItem = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  transition: 0.4s;
   background-color: white;
   position: relative;
   width: 30%;
@@ -48,5 +50,10 @@ export const StyledPopularItem = styled.div`
       width: 18px;
       height: auto;
     }
+  }
+
+  &:hover {
+    -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
   }
 `

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const StyledPromoItem = styled.div`
+export const StyledPromoItem = styled(motion.div)`
   display: flex;
   padding: ${({ theme }) => theme.paddings.p4};
 

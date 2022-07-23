@@ -1,5 +1,5 @@
 import { IHouse } from '../../models/IHouse'
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface IHouseState {
   houses: IHouse[]
@@ -16,7 +16,11 @@ const initialState: IHouseState = {
 export const housesSlice = createSlice({
   name: 'houses',
   initialState,
-  reducers: {},
+  reducers: {
+    setHouses(state, action: PayloadAction<IHouse[]>) {
+      state.houses = action.payload
+    },
+  },
 })
 
 export default housesSlice.reducer

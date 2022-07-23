@@ -4,7 +4,7 @@ import { StyledPromoItem } from './styles'
 
 const PromoItem: FC = () => {
   return (
-    <StyledPromoItem>
+    <StyledPromoItem animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       {promoPictures.map(({ pic, alt }) => (
         <div className="pic-block" key={alt}>
           <img src={pic} alt={alt} />
