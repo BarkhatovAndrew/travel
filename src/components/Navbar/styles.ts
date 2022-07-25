@@ -11,6 +11,12 @@ export const StyledNavbar = styled(motion.div)`
   color: ${({ theme }) => theme.colors.main};
   transition: 0.3s;
 
+  svg {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+
   .sign-up-btn {
     border: none;
     background-color: black;

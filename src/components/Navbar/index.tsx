@@ -1,16 +1,22 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { menu } from '../../utils/menu'
 import { StyledNavbar } from './styles'
 import { Link } from 'react-router-dom'
-import { useAppDispatch } from '../../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { themeSlice } from '../../store/reducers/themeSlice'
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 
 const Navbar: FC = () => {
   const dispatch = useAppDispatch()
+  const theme = useAppSelector((state) => state.themeReducer.dark)
 
   const changeTheme = () => {
     dispatch(themeSlice.actions.switchTheme())
   }
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme))
+  }, [theme])
 
   return (
     <StyledNavbar
@@ -26,7 +32,11 @@ const Navbar: FC = () => {
       </ul>
       <ul className="right-bar">
         <li>
-          <a onClick={changeTheme}>Theme</a>
+          {theme ? (
+            <BsFillMoonStarsFill onClick={changeTheme} />
+          ) : (
+            <BsFillSunFill onClick={changeTheme} />
+          )}
         </li>
         <li>
           <a>Sign In</a>
