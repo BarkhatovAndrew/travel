@@ -1,25 +1,28 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import PopularItem from './PopularItem'
 import { housesApi } from '../../services/HousesService'
 import { StyledPopularBlock } from './styles'
-import { useAppDispatch } from '../../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { housesSlice } from '../../store/reducers/housesSlice'
 
 const PopularBlock: FC = () => {
   const { data } = housesApi.useFetchAllUsersQuery(null)
   const dispatch = useAppDispatch()
-  const setHouses = () => {
-    console.log(data)
+  const houses = useAppSelector((state) => state.housesReducer.houses)
+
+  useEffect(() => {
     if (data) {
       dispatch(housesSlice.actions.setHouses(data))
     }
-  }
+  }, [data])
+
   return (
     <StyledPopularBlock>
-      <h2 onClick={setHouses}>Popular places</h2>
+      <h2>Popular places</h2>
       <div className="houses">
-        {data &&
-          data.map((house) => <PopularItem key={house.title} house={house} />)}
+        {houses.map((house) => (
+          <PopularItem key={house.title} house={house} />
+        ))}
       </div>
     </StyledPopularBlock>
   )

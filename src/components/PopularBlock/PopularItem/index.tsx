@@ -1,18 +1,28 @@
-import { FC, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { IHouse } from '../../../models/IHouse'
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from 'react-icons/ai'
 import { StyledPopularItem } from './styles'
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
+import { housesSlice } from '../../../store/reducers/housesSlice'
 
 interface IProps {
   house: IHouse
 }
 
 const PopularItem: FC<IProps> = ({ house }) => {
-  const [like, setLike] = useState<boolean>(false)
+  const dispatch = useAppDispatch()
+  const houses = useAppSelector((state) => state.housesReducer.houses)
 
   const likeHandler = () => {
-    setLike(!like)
+    dispatch(housesSlice.actions.likeHouse(house.id))
   }
+
+  useEffect(() => {
+    localStorage.setItem(
+      'liked_houses',
+      JSON.stringify(houses.filter((item) => item.liked).map((item) => item.id))
+    )
+  }, [houses])
 
   return (
     <StyledPopularItem>
@@ -20,10 +30,10 @@ const PopularItem: FC<IProps> = ({ house }) => {
         src={require(`../../../assets/house-imgs/${house.img}.jpg`)}
         alt={house.title}
       />
-      {like ? (
-        <AiFillHeart className="like" onClick={() => likeHandler()} />
+      {house.liked ? (
+        <AiFillHeart className="like" onClick={likeHandler} />
       ) : (
-        <AiOutlineHeart className="like" onClick={() => likeHandler()} />
+        <AiOutlineHeart className="like" onClick={likeHandler} />
       )}
 
       <div className="description">

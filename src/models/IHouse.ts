@@ -5,4 +5,5 @@ export interface IHouse {
   rating: number
   title: string
   price: number
+  liked?: boolean
 }
