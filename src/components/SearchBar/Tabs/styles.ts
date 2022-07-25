@@ -10,7 +10,7 @@ export const StyledButton = styled(motion.button)<IButtonProps>`
   cursor: pointer;
   background-color: ${(props) =>
     props.active ? props.theme.colors.secondary : 'white'};
-  color: ${(props) => (props.active ? 'white' : props.theme.colors.main)};
+  color: ${(props) => (props.active ? 'white' : 'black')};
 
   &:hover {
     -webkit-filter: brightness(110%);

@@ -1,19 +1,19 @@
 export interface IMenu {
-  title: string;
-  url: string;
+  title: string
+  url: string
 }
 
 export const menu: IMenu[] = [
   {
     title: 'Home',
-    url: '/'
+    url: '/',
   },
   {
-    title: 'Places',
-    url: '/places'
+    title: 'Favorites',
+    url: '/favorites',
   },
   {
     title: 'Help',
-    url: '/help'
-  }
+    url: '/help',
+  },
 ]

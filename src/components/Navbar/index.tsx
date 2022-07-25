@@ -1,9 +1,17 @@
 import { FC } from 'react'
 import { menu } from '../../utils/menu'
-import { GrLanguage } from 'react-icons/gr'
 import { StyledNavbar } from './styles'
+import { Link } from 'react-router-dom'
+import { useAppDispatch } from '../../hooks/redux'
+import { themeSlice } from '../../store/reducers/themeSlice'
 
 const Navbar: FC = () => {
+  const dispatch = useAppDispatch()
+
+  const changeTheme = () => {
+    dispatch(themeSlice.actions.switchTheme())
+  }
+
   return (
     <StyledNavbar
       animate={{ opacity: 1, y: 0 }}
@@ -12,14 +20,13 @@ const Navbar: FC = () => {
       <ul className="menu">
         {menu.map((item) => (
           <li key={item.title}>
-            <a>{item.title}</a>
+            <Link to={item.url}>{item.title}</Link>
           </li>
         ))}
       </ul>
       <ul className="right-bar">
         <li>
-          <GrLanguage />
-          <a>Language</a>
+          <a onClick={changeTheme}>Theme</a>
         </li>
         <li>
           <a>Sign In</a>

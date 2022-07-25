@@ -19,6 +19,8 @@ export const StyledPromoItem = styled(motion.div)`
     position: relative;
     border-radius: 30px;
     padding: ${({ theme }) => theme.paddings.p2};
+    transition: 0.2s;
+    cursor: pointer;
   }
 
   img {

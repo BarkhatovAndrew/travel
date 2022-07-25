@@ -19,6 +19,7 @@ export const StyledPopularItem = styled(motion.div)`
     top: 16px;
     background-color: white;
     width: 20px;
+    color: black;
     height: auto;
     border-radius: 50%;
     padding: 6px;
@@ -32,6 +33,7 @@ export const StyledPopularItem = styled(motion.div)`
 
   .description {
     padding: ${({ theme }) => theme.paddings.p3};
+    color: black;
   }
 
   .row {

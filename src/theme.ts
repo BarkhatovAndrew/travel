@@ -1,15 +1,34 @@
-import { DefaultTheme } from 'styled-components'
+import { createGlobalStyle, DefaultTheme } from 'styled-components'
 
-export const theme: DefaultTheme = {
+const paddings = {
+  p1: '4px',
+  p2: '8px',
+  p3: '16px',
+  p4: '32px',
+  p5: '50px',
+}
+
+export const lightTheme: DefaultTheme = {
   colors: {
     main: '#232323FF',
     secondary: '#dd5e5b',
+    background: '#f1eff1',
   },
-  paddings: {
-    p1: '4px',
-    p2: '8px',
-    p3: '16px',
-    p4: '32px',
-    p5: '50px',
-  },
+  paddings,
 }
+
+export const darkTheme: DefaultTheme = {
+  colors: {
+    main: '#ffffff',
+    secondary: '#dd5e5b',
+    background: '#1c1c1c',
+  },
+  paddings,
+}
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+    transition: 0.3s;
+    background-color: ${({ theme }) => theme.colors.background};
+  }
+`

@@ -14,7 +14,7 @@ const PopularBlock: FC = () => {
     if (data) {
       dispatch(housesSlice.actions.setHouses(data))
     }
-  }, [data])
+  }, [data, dispatch])
 
   return (
     <StyledPopularBlock>

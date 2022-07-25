@@ -25,6 +25,8 @@ const StyledExpanded = styled(motion.div)`
     background-color: white;
     position: absolute;
     transform: translate(-50%, -50%);
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.main};
     left: 50%;
     top: 50%;
     overflow-y: scroll;

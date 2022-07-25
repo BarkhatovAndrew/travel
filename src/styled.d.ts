@@ -7,6 +7,7 @@ declare module 'styled-components' {
     colors: {
       main: string
       secondary?: string
+      background: string
     }
     paddings: {
       p1: string

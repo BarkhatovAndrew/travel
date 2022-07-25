@@ -30,6 +30,7 @@ const SearchBar: FC = () => {
           placeholder="Check Out"
         />
         <input
+          onKeyDown={() => false}
           type="number"
           placeholder="Guests"
           min={1}

@@ -7,7 +7,9 @@ export const StyledNavbar = styled(motion.div)`
   height: 80px;
   align-items: center;
   justify-content: space-between;
-  background-color: #f1eff1;
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.main};
+  transition: 0.3s;
 
   .sign-up-btn {
     border: none;
@@ -17,11 +19,10 @@ export const StyledNavbar = styled(motion.div)`
     height: 40px;
     width: 120px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
 
     &:hover {
-      background-color: #202020;
-
+      background-color: ${({ theme }) => theme.colors.secondary};
     }
   }
 
@@ -64,7 +65,7 @@ export const StyledNavbar = styled(motion.div)`
     li {
       a {
         text-decoration: none;
-        color: black;
+        color: ${({ theme }) => theme.colors.main};
 
         &:hover {
           color: #d7514e;
