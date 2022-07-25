@@ -4,6 +4,8 @@ import { AiFillHeart, AiFillStar, AiOutlineHeart } from 'react-icons/ai'
 import { StyledPopularItem } from './styles'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 import { housesSlice } from '../../../store/reducers/housesSlice'
+import { modalSlice } from '../../../store/reducers/modalSlice'
+import { MouseEvent } from 'react'
 
 interface IProps {
   house: IHouse
@@ -13,7 +15,12 @@ const PopularItem: FC<IProps> = ({ house }) => {
   const dispatch = useAppDispatch()
   const houses = useAppSelector((state) => state.housesReducer.houses)
 
-  const likeHandler = () => {
+  const openModal = () => {
+    dispatch(modalSlice.actions.openModal(house))
+  }
+
+  const likeHandler = (event: MouseEvent<SVGAElement>) => {
+    event.stopPropagation()
     dispatch(housesSlice.actions.likeHouse(house.id))
   }
 
@@ -25,7 +32,7 @@ const PopularItem: FC<IProps> = ({ house }) => {
   }, [houses])
 
   return (
-    <StyledPopularItem>
+    <StyledPopularItem onClick={openModal}>
       <img
         src={require(`../../../assets/house-imgs/${house.img}.jpg`)}
         alt={house.title}

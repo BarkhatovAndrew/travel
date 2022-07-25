@@ -9,7 +9,7 @@ export const StyledPromoBar = styled.div`
     font-size: 40px;
     color: ${({ theme }) => theme.colors.main};
     margin-left: ${({ theme }) => theme.paddings.p5};
-    margin-top: ${({ theme }) => theme.paddings.p5};
+    margin-top: 64px;
   }
 
   h6 {

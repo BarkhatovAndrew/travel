@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import housesReducer from './reducers/housesSlice'
+import modalReducer from './reducers/modalSlice'
 import { housesApi } from '../services/HousesService'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
 const rootReducer = combineReducers({
   housesReducer,
+  modalReducer,
   [housesApi.reducerPath]: housesApi.reducer,
 })
 

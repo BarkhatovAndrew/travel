@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { menu } from '../../utils/menu'
-import { Link } from 'react-router-dom'
 import { GrLanguage } from 'react-icons/gr'
 import { StyledNavbar } from './styles'
 
@@ -13,7 +12,7 @@ const Navbar: FC = () => {
       <ul className="menu">
         {menu.map((item) => (
           <li key={item.title}>
-            <Link to={item.url}>{item.title}</Link>
+            <a>{item.title}</a>
           </li>
         ))}
       </ul>

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 export const StyledPopularItem = styled(motion.div)`
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   transition: 0.4s;

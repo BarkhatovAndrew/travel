@@ -16,27 +16,35 @@ export const StyledNavbar = styled(motion.div)`
     border-radius: 10px;
     height: 40px;
     width: 120px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #202020;
+
+    }
   }
 
   ul {
     padding: 0;
     list-style: none;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     display: flex;
-  }
 
-  a {
-    transition: 0.2s;
-  }
+    a {
+      transition: 0.2s;
+      cursor: pointer;
+    }
 
-  a:hover {
-    color: #d7514e;
+    a:hover {
+      color: #d7514e;
+    }
   }
 
   .right-bar {
     width: 350px;
-    margin-right: 20px;
+    margin-right: 50px;
 
     li {
       display: flex;
@@ -50,12 +58,17 @@ export const StyledNavbar = styled(motion.div)`
   }
 
   .menu {
-    width: 300px;
+    width: 250px;
+    margin-left: 50px;
 
     li {
       a {
         text-decoration: none;
         color: black;
+
+        &:hover {
+          color: #d7514e;
+        }
       }
     }
   }

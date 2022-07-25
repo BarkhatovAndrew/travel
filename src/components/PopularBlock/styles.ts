@@ -10,8 +10,8 @@ export const StyledPopularBlock = styled.div`
     font-size: 40px;
     color: ${({ theme }) => theme.colors.main};
     margin-left: ${({ theme }) => theme.paddings.p5};
-    margin-top: ${({ theme }) => theme.paddings.p5};
-    margin-bottom: 50px;
+    margin-top: ${({ theme }) => theme.paddings.p4};
+    margin-bottom: 32px;
   }
 
   .houses {
