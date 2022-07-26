@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { housesSlice } from '../../store/reducers/housesSlice'
 
 const PopularBlock: FC = () => {
-  const { data } = housesApi.useFetchAllUsersQuery(null)
+  const { data } = housesApi.useFetchAllHousesQuery(null)
   const dispatch = useAppDispatch()
   const houses = useAppSelector((state) => state.housesReducer.houses)
 

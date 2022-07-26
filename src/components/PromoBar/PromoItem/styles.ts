@@ -13,6 +13,7 @@ export const StyledPromoItem = styled(motion.div)`
     padding: ${({ theme }) => theme.paddings.p2}
       ${({ theme }) => theme.paddings.p3};
     border-radius: 20px;
+    color: black;
   }
 
   .pic-block {

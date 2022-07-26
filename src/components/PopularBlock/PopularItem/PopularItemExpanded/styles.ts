@@ -13,6 +13,23 @@ export const StyledExpanded = styled(motion.div)`
     rgba(0, 0, 0, 0.5) 100%
   );
 
+  .close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;

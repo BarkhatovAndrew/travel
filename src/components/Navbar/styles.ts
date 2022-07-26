@@ -42,6 +42,7 @@ export const StyledNavbar = styled(motion.div)`
     a {
       transition: 0.2s;
       cursor: pointer;
+      color: ${({ theme }) => theme.colors.main};
     }
 
     a:hover {

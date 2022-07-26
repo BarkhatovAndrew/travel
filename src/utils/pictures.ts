@@ -5,9 +5,11 @@ export const promoPictures = [
   {
     pic: indonesia,
     alt: 'Indonesia Tour',
+    url: '/page/0',
   },
   {
     pic: sheep,
     alt: 'Scotland Tour',
+    url: '/page/1',
   },
 ]

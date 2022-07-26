@@ -36,7 +36,7 @@ const StyledLikedHouses = styled.div`
 `
 
 const FavoritesPage: FC = () => {
-  const { data } = housesApi.useFetchAllUsersQuery(null)
+  const { data } = housesApi.useFetchAllHousesQuery(null)
   const dispatch = useAppDispatch()
   const houses = useAppSelector((state) => state.housesReducer.houses)
   const likedHouses = houses

@@ -1,17 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IHouse } from '../models/IHouse'
+import { IPage } from '../models/IPage'
 
-export const housesApi = createApi({
-  reducerPath: 'housesAPI',
+export const articlesApi = createApi({
+  reducerPath: 'articlesApi',
   baseQuery: fetchBaseQuery({
     baseUrl:
       'https://travel-ad8e2-default-rtdb.europe-west1.firebasedatabase.app/',
   }),
   endpoints: (builder) => ({
-    fetchAllHouses: builder.query<IHouse[], null>({
-      query: () => ({
-        url: '/houses.json',
-      }),
+    fetchAllArticles: builder.query<IPage, number>({
+      query: (pageId) => `/articles/${pageId}.json`,
     }),
   }),
 })

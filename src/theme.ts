@@ -31,4 +31,9 @@ export const GlobalStyle = createGlobalStyle`
     transition: 0.3s;
     background-color: ${({ theme }) => theme.colors.background};
   }
+  
+  a {
+    color: ${({ theme }) => theme.colors.secondary};
+    text-decoration: none;
+  }
 `

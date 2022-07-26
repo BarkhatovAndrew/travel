@@ -9,6 +9,7 @@ import HelpPage from './pages/Help'
 import MainPage from './pages/Main'
 import FavoritesPage from './pages/Favorites'
 import NotFoundPage from './pages/NotFound'
+import ArticlePage from './pages/ArticlePage'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -20,6 +21,7 @@ root.render(
             <Route index element={<MainPage />} />
             <Route path="help" element={<HelpPage />} />
             <Route path="favorites" element={<FavoritesPage />} />
+            <Route path="page/:pageId" element={<ArticlePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

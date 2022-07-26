@@ -12,8 +12,16 @@ const Footer: FC = () => {
         <p>Destinations</p>
       </div>
       <div className="right">
-        <p>English</p>
-        <p>USD</p>
+        <p>
+          Created by{' '}
+          <a
+            href="https://github.com/BarkhatovAndrew"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Andrew Barkhatov
+          </a>
+        </p>
         <p>Support & Resources</p>
       </div>
     </StyledFooter>
