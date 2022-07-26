@@ -8,6 +8,7 @@ import { store } from './store'
 import HelpPage from './pages/Help'
 import MainPage from './pages/Main'
 import FavoritesPage from './pages/Favorites'
+import NotFoundPage from './pages/NotFound'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -19,6 +20,7 @@ root.render(
             <Route index element={<MainPage />} />
             <Route path="help" element={<HelpPage />} />
             <Route path="favorites" element={<FavoritesPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </Provider>
